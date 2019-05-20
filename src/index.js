@@ -44,6 +44,6 @@ let selectedHotel = "";
   });
 });
 
-app.listen(3008, function () {
-  console.log('server on port 3008');
+app.listen(process.env.PORT || 3008, function () {
+  console.log('server on port ' + process.env.PORT || 3008);
 });
