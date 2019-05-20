@@ -4,7 +4,10 @@
   "description": "Test Almundo Frontend",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "npm install && babel-node src/index"
+     "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel src --out-dir build --source-maps inline --copy-files",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js"
   },
   "repository": {
     "type": "git",
